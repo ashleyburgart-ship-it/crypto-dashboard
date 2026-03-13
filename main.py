@@ -671,12 +671,11 @@ def scan_market(
         return format_results(results)
     return results
 
-
 def main() -> None:
     """Run the scanner continuously until the user stops it."""
     try:
         while True:
-   	    results = scan_market()
+            results = scan_market()
             results.to_csv("latest_scan.csv", index=False)
             evaluate_signal_outcomes()
             clear_console()
